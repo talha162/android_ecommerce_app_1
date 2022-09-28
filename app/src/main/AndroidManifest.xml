@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.project">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
+        tools:ignore="ExtraText">
+        <activity
+            android:name=".ui.UpdateDeleteProduct"
+            android:exported="false" />
+        <activity
+            android:name=".ui.OrdersHistory"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Favorite"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rzp.device_token.share" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@style/CheckoutTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <data
+                    android:host="rzp.io"
+                    android:scheme="io.rzp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainSeller"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.welcome"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.Profilepage"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CheckOut"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Address"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Product"
+            android:exported="false" />
+        <activity
+            android:name=".ui.WriteReviews"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainUsers"
+            android:exported="false"
+            android:label="@string/title_activity_main_user" />
+    </application>
+
+</manifest>
